@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link rel="icon" type="image/jpeg" href="#">
+<link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wgARCAMgAyADASIAAhEBAxEB/8QAGwABAAMBAQEBAAAAAAAAAAAAAAEEBQYDAgf/x...REPLACE...">
 
 <meta property="og:title" content="OSO HOSPITALITY — The Art of Extraordinary Living">
 <meta property="og:description" content="Luxury yachts, exotic cars, exclusive nightlife, and private villas curated for the world's most discerning clientele.">
@@ -513,8 +513,8 @@ footer { background:var(--off-white); padding:5rem 4rem 2rem; border-top:1px sol
 
 
 /* MIAMI SECTIONS - hidden by default, shown when accessed via Miami nav */
-#yachts-miami, #exotic-cars, #nightclubs, #miami-villas, #cannes-entertainment, #monaco-entertainment { display:none; }
-#yachts-miami.active-section, #exotic-cars.active-section, #nightclubs.active-section, #miami-villas.active-section, #cannes-entertainment.active-section, #monaco-entertainment.active-section { display:block; }
+#yachts-miami, #exotic-cars, #nightclubs, #miami-villas, #cannes-entertainment, #monaco-entertainment, #reserve { display:none; }
+#yachts-miami.active-section, #exotic-cars.active-section, #nightclubs.active-section, #miami-villas.active-section, #cannes-entertainment.active-section, #monaco-entertainment.active-section, #reserve.active-section { display:block; }
 
 /* Back to home button */
 .back-home-btn {
@@ -570,6 +570,195 @@ footer { background:var(--off-white); padding:5rem 4rem 2rem; border-top:1px sol
     letter-spacing:.22em;
   }
   .back-home-btn .back-arrow { width:18px; height:18px; font-size:.65rem; }
+}
+
+
+/* RESERVE LANDING PAGE */
+.reserve-bg { background: linear-gradient(180deg, #F8F6FB 0%, #ffffff 100%); }
+.reserve-hero { text-align:center; max-width:760px; margin:1rem auto 3.5rem; padding:0 1rem; }
+.reserve-container { display:grid; grid-template-columns:1.5fr 1fr; gap:3rem; max-width:1200px; margin:0 auto; padding:0 1rem; }
+.reserve-form-wrapper { background:#fff; border:1px solid var(--border); padding:3rem; box-shadow:0 8px 40px rgba(61,47,143,0.06); }
+.reserve-form { display:flex; flex-direction:column; gap:2.5rem; }
+
+.form-section { padding-bottom:2rem; border-bottom:1px solid var(--border); }
+.form-section:last-of-type { border-bottom:none; padding-bottom:0; }
+.form-section-label {
+  font-family:var(--sans);
+  font-size:.5rem;
+  font-weight:600;
+  letter-spacing:.4em;
+  text-transform:uppercase;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  margin-bottom:1.5rem;
+}
+
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-bottom:1.2rem; }
+.form-row:last-child { margin-bottom:0; }
+.form-group { display:flex; flex-direction:column; gap:.5rem; }
+.form-group.full-width { grid-column:1/-1; }
+
+.form-label {
+  font-family:var(--sans);
+  font-size:.55rem;
+  font-weight:500;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.form-input, .form-select, .form-textarea {
+  font-family:var(--sans);
+  font-size:.85rem;
+  padding:.95rem 1.1rem;
+  border:1px solid var(--border-mid);
+  background:#fff;
+  color:var(--text);
+  transition:all .25s ease;
+  width:100%;
+  outline:none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color:var(--purple);
+  box-shadow:0 0 0 3px rgba(61,47,143,0.08);
+}
+.form-textarea { resize:vertical; font-family:var(--sans); line-height:1.6; }
+.form-select { cursor:none; appearance:none; -webkit-appearance:none; background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 1rem center/12px; padding-right:2.5rem; }
+
+.form-actions { margin-top:1rem; text-align:center; }
+.reserve-submit {
+  font-family:var(--sans);
+  font-size:.65rem;
+  font-weight:600;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  background:var(--grad);
+  color:#fff;
+  border:none;
+  padding:1.25rem 3rem;
+  cursor:none;
+  display:inline-flex;
+  align-items:center;
+  gap:.8rem;
+  transition:all .35s cubic-bezier(.16,1,.3,1);
+  -webkit-text-fill-color:#fff;
+  box-shadow:0 6px 24px rgba(61,47,143,0.20);
+}
+.reserve-submit:hover {
+  transform:translateY(-2px);
+  box-shadow:0 12px 32px rgba(61,47,143,0.30);
+}
+.submit-arrow { transition:transform .3s ease; }
+.reserve-submit:hover .submit-arrow { transform:translateX(5px); }
+
+.reserve-note {
+  margin-top:1.5rem;
+  font-size:.7rem;
+  letter-spacing:.05em;
+  color:var(--muted);
+}
+.reserve-note a {
+  color:var(--purple);
+  text-decoration:none;
+  border-bottom:1px solid rgba(61,47,143,0.3);
+  padding-bottom:1px;
+  transition:border-color .2s;
+}
+.reserve-note a:hover { border-color:var(--purple); }
+
+.reserve-aside { display:flex; flex-direction:column; gap:1.5rem; }
+.aside-card {
+  background:#fff;
+  border:1px solid var(--border);
+  padding:2rem;
+}
+.aside-title {
+  font-family:var(--serif);
+  font-size:1.4rem;
+  font-weight:300;
+  color:var(--text);
+  margin-bottom:1rem;
+}
+.aside-text {
+  font-size:.78rem;
+  line-height:1.85;
+  color:var(--muted);
+  letter-spacing:.02em;
+}
+.aside-stats {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+}
+.aside-stat {
+  background:#fff;
+  padding:1.5rem .8rem;
+  text-align:center;
+}
+.aside-stat-num {
+  font-family:var(--serif);
+  font-size:1.6rem;
+  font-weight:300;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  margin-bottom:.4rem;
+  line-height:1;
+}
+.aside-stat-label {
+  font-size:.5rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.aside-quote {
+  background:linear-gradient(135deg, rgba(61,47,143,0.04) 0%, rgba(196,51,106,0.04) 100%);
+  border:1px solid var(--border);
+}
+.aside-quote-text {
+  font-family:var(--serif);
+  font-size:.95rem;
+  font-style:italic;
+  line-height:1.7;
+  color:var(--text);
+  margin-bottom:1rem;
+}
+.aside-quote-author {
+  font-size:.55rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+@media(max-width:900px) {
+  .reserve-container { grid-template-columns:1fr; gap:2rem; }
+  .reserve-form-wrapper { padding:2rem 1.5rem; }
+  .form-row { grid-template-columns:1fr; }
+  .aside-stats { grid-template-columns:1fr 1fr 1fr; }
+  .aside-stat-num { font-size:1.3rem; }
+}
+@media(max-width:480px) {
+  .reserve-form-wrapper { padding:1.5rem 1.2rem; }
+  .reserve-submit { font-size:.55rem; padding:1.1rem 2rem; letter-spacing:.25em; }
+  .aside-stats { grid-template-columns:1fr; }
+}
+
+
+/* PRINT STYLES */
+@media print {
+  nav, .back-home-btn, .nav-cta, .mobile-toggle, .cursor, .cursor-ring,
+  .scroll-hint, .marquee, .footer-social, .ent-tabs, .car-sort-tabs, .car-filters { display: none !important; }
+  * { color: #000 !important; background: #fff !important; cursor: auto !important; box-shadow: none !important; }
+  body { font-size: 12pt; }
+  .section { padding: 1rem !important; }
 }
 
 /* ANIMATIONS */
@@ -871,11 +1060,11 @@ img { max-width: 100%; height: auto; }
     <li class="nav-item has-dropdown">
       <a href="#destinations">Monaco</a>
       <div class="nav-dropdown"><div class="nav-dropdown-inner">
-        <a href="#monaco-entertainment" class="nav-drop-item">
+        <a href="#contact" class="nav-drop-item nav-drop-disabled">
           <span class="drop-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 17 Q7 13 12 14 L12 6 Z" stroke="url(#di1)" stroke-width="1.5" fill="none" stroke-linejoin="round"/><line x1="12" y1="6" x2="12" y2="17" stroke="url(#di1)" stroke-width="1.5"/><path d="M1 19 Q6 16 12 17 Q18 18 23 16" stroke="url(#di1)" stroke-width="1.5" fill="none" stroke-linecap="round"/><defs><linearGradient id="di1" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#3D2F8F"/><stop offset="100%" stop-color="#C4336A"/></linearGradient></defs></svg></span>
           <span class="drop-text"><strong>Luxury Yachts</strong></span>
         </a>
-        <a href="#monaco-entertainment" class="nav-drop-item">
+        <a href="#contact" class="nav-drop-item nav-drop-disabled">
           <span class="drop-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 13 L6 9 L10 8 L18 8 L21 11 L22 13 L22 16 L3 16 Z" stroke="url(#di2)" stroke-width="1.5" fill="none" stroke-linejoin="round"/><circle cx="7" cy="17" r="2" stroke="url(#di2)" stroke-width="1.5"/><circle cx="17" cy="17" r="2" stroke="url(#di2)" stroke-width="1.5"/><path d="M10 8 L11 13 L17 13 L18 8" stroke="url(#di2)" stroke-width="1" fill="none"/><defs><linearGradient id="di2" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#3D2F8F"/><stop offset="100%" stop-color="#C4336A"/></linearGradient></defs></svg></span>
           <span class="drop-text"><strong>Exotic Car Rental &amp; Transportation</strong></span>
         </a>
@@ -976,11 +1165,11 @@ img { max-width: 100%; height: auto; }
     <li class="nav-item has-dropdown">
       <a href="#destinations">Cannes</a>
       <div class="nav-dropdown"><div class="nav-dropdown-inner">
-        <a href="#cannes-entertainment" class="nav-drop-item">
+        <a href="#contact" class="nav-drop-item nav-drop-disabled">
           <span class="drop-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 17 Q7 13 12 14 L12 6 Z" stroke="url(#di1_cannes)" stroke-width="1.5" fill="none" stroke-linejoin="round"/><line x1="12" y1="6" x2="12" y2="17" stroke="url(#di1_cannes)" stroke-width="1.5"/><path d="M1 19 Q6 16 12 17 Q18 18 23 16" stroke="url(#di1_cannes)" stroke-width="1.5" fill="none" stroke-linecap="round"/><defs><linearGradient id="di1_cannes" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#3D2F8F"/><stop offset="100%" stop-color="#C4336A"/></linearGradient></defs></svg></span>
           <span class="drop-text"><strong>Luxury Yachts</strong></span>
         </a>
-        <a href="#cannes-entertainment" class="nav-drop-item">
+        <a href="#contact" class="nav-drop-item nav-drop-disabled">
           <span class="drop-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 13 L6 9 L10 8 L18 8 L21 11 L22 13 L22 16 L3 16 Z" stroke="url(#di2_cannes)" stroke-width="1.5" fill="none" stroke-linejoin="round"/><circle cx="7" cy="17" r="2" stroke="url(#di2_cannes)" stroke-width="1.5"/><circle cx="17" cy="17" r="2" stroke="url(#di2_cannes)" stroke-width="1.5"/><path d="M10 8 L11 13 L17 13 L18 8" stroke="url(#di2_cannes)" stroke-width="1" fill="none"/><defs><linearGradient id="di2_cannes" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#3D2F8F"/><stop offset="100%" stop-color="#C4336A"/></linearGradient></defs></svg></span>
           <span class="drop-text"><strong>Exotic Car Rental &amp; Transportation</strong></span>
         </a>
@@ -995,7 +1184,7 @@ img { max-width: 100%; height: auto; }
       </div></div>
     </li>
   </ul>
-<a class="nav-cta" href="#contact">Reserve Now</a>
+<a class="nav-cta" href="#reserve" onclick="event.preventDefault();showReserve();">Reserve Now</a>
 </nav>
 <!-- HERO -->
 <section id="hero" class="hero home-only" id="home">
@@ -1011,7 +1200,7 @@ img { max-width: 100%; height: auto; }
 <p class="hero-desc">OSO HOSPITALITY curates bespoke luxury experiences across the world's most coveted destinations — private yachts, exotic supercars, exclusive villas, and the most sought-after nightlife on the planet.</p>
 <div class="hero-btns">
 <a class="btn-grad" href="#experiences">Explore Experiences</a>
-<a class="btn-outline" href="#contact">Speak to a Concierge</a>
+<a class="btn-outline" href="#reserve" onclick="event.preventDefault();showReserve();">Speak to a Concierge</a>
 </div>
 </div>
 <div class="hero-right">
@@ -1185,14 +1374,14 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>769 HP</strong>Power</div>
           <div class="car-spec-item"><strong>Roadster</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
     <div class="car-card" data-brand="ferrari" data-year="2022" data-make="Ferrari" data-model="F8 Spider">
       <div class="car-slideshow" data-slide="0">
         <div class="car-slides">
-          <div class="car-slide" style="background-image:url('https://www.mvpmiami.com/imagetag/109/main/f/Used-2023-FERRARI-F8.jpg');background-position:center 50%;"></div>
+          <div class="car-slide" style="background-image:url('https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=1200&auto=format&fit=crop&q=85');background-position:center 50%;"></div>
         </div>
         <div class="car-badge-slide">Ferrari</div>
       </div>
@@ -1205,7 +1394,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>710 HP</strong>Power</div>
           <div class="car-spec-item"><strong>Spider</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -1234,7 +1423,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>563 HP</strong>Power</div>
           <div class="car-spec-item"><strong>SUV</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -1269,7 +1458,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>563 HP</strong>Power</div>
           <div class="car-spec-item"><strong>Convertible</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -1304,7 +1493,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>624 HP</strong>Power</div>
           <div class="car-spec-item"><strong>Coupé</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -1331,7 +1520,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>550 HP</strong>Power</div>
           <div class="car-spec-item"><strong>SUV</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -1360,7 +1549,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>563 HP</strong>Power</div>
           <div class="car-spec-item"><strong>Sedan</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -1389,7 +1578,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>602 HP</strong>Power</div>
           <div class="car-spec-item"><strong>Spyder</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -1434,7 +1623,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>657 HP</strong>Power</div>
           <div class="car-spec-item"><strong>Super SUV</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -1461,7 +1650,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>602 HP</strong>Power</div>
           <div class="car-spec-item"><strong>Coupé</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -1481,7 +1670,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>542 HP</strong>Power</div>
           <div class="car-spec-item"><strong>Convertible</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -1508,7 +1697,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>542 HP</strong>Power</div>
           <div class="car-spec-item"><strong>Sedan</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -1543,7 +1732,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>542 HP</strong>Power</div>
           <div class="car-spec-item"><strong>SUV</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -1570,7 +1759,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>416 HP</strong>Power</div>
           <div class="car-spec-item"><strong>SUV</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -1592,7 +1781,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>188 HP</strong>Power</div>
           <div class="car-spec-item"><strong>Executive Van</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -1612,7 +1801,7 @@ img { max-width: 100%; height: auto; }
           <div class="car-spec-item"><strong>395 HP</strong>Power</div>
           <div class="car-spec-item"><strong>SUV</strong>Body</div>
         </div>
-        <a href="#contact" class="car-inquire">Inquire Now</a>
+        <a href="#reserve" class="car-inquire" onclick="event.preventDefault();showReserve(this);">Inquire Now</a>
       </div>
     </div>
 
@@ -2100,7 +2289,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">May · Annual</div>
 <h3 class="club-name">Cannes Film Festival</h3>
 <p class="club-desc">The Cannes Film Festival takes place each May in Cannes, bringing together the world of cinema, luxury, and culture on the French Riviera. Known for red carpet premieres, yacht events, exclusive parties, and prestigious awards, the festival attracts global filmmakers, celebrities, and tastemakers for nearly two weeks of iconic experiences.</p>
-<a class="club-book" href="#contact">Inquire Access</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Inquire Access</a>
 </div>
 </div>
   </div>
@@ -2122,7 +2311,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">May · Annual</div>
 <h3 class="club-name">F1 Monaco Grand Prix</h3>
 <p class="club-desc">Monaco Grand Prix is the crown jewel of Formula 1 — where elite racing meets luxury on the streets of Monte Carlo. Set against yachts, casinos, and the Mediterranean, it's one of the most prestigious and difficult races in motorsport, known as much for glamour and celebrity as for speed. During race week, Formula One World Championship transforms Monaco into a global spectacle of sport, nightlife, and high society.</p>
-<a class="club-book" href="#contact">Inquire Access</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Inquire Access</a>
 </div>
 </div>
   </div>
@@ -2180,7 +2369,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Wed – Sun</div>
 <h3 class="club-name">LIV</h3>
 <p class="club-desc">Miami's most iconic mega-club — celebrity sightings, high-energy hip-hop and EDM, and a flashy, high-end vibe. Guys can buy tickets or tables; girls often get on guestlists. Everyone must dress to impress.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 <div class="club-card">
@@ -2189,7 +2378,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Fri – Sat</div>
 <h3 class="club-name">Club Space</h3>
 <p class="club-desc">Miami's legendary after-hours spot, famous for sunrise sets, underground house and techno, and an open-air Terrace. No strict dress code — think rave over luxury. Both guys and girls can buy tickets; tables available but not required.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 <div class="club-card">
@@ -2198,7 +2387,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Wed – Sun</div>
 <h3 class="club-name">E11EVEN</h3>
 <p class="club-desc">A 24/7 ultraclub with aerial shows, big-name DJs and rappers, and nonstop energy 'til sunrise. Both guys and girls can buy tickets or tables — guys usually need a table on weekends. Dress code is upscale nightclub — think sexy and stylish.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 <div class="club-card">
@@ -2207,7 +2396,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Thu – Sat</div>
 <h3 class="club-name">Mila Lounge</h3>
 <p class="club-desc">A luxe, multi-sensory subterranean hotspot in Miami Beach, blending earthy African-inspired design with a glamorous vibe and deep-house beats. Dress code is upscale-chic — business casual to cocktail attire. Guys typically need to book a table or bottle service; guestlist isn't standard.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 <div class="club-card">
@@ -2216,7 +2405,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Thu – Sat</div>
 <h3 class="club-name">Faena Saxony Bar</h3>
 <p class="club-desc">A gilded-age speakeasy-style lounge at Faena Hotel, with cozy seating, live DJs, and refined craft cocktails in an intimate, elegant setting. Dress code is upscale-chic — think tailored attire, no casual sandals. Guys typically need a table reservation.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 <div class="club-card">
@@ -2225,7 +2414,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Thu – Sun</div>
 <h3 class="club-name">Casa Neos Lounge</h3>
 <p class="club-desc">Casa Neos is a waterfront hotspot in Miami that blends Mediterranean-inspired dining with a high-end nightlife atmosphere. By day it offers refined, scenic dining, while at night it transforms into a vibrant social scene with music, cocktails, and an upscale crowd. It's a go-to destination for a luxury, experience-driven night out.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 
@@ -2235,7 +2424,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Thu – Sat</div>
 <h3 class="club-name">Gekko Lounge</h3>
 <p class="club-desc">A high-end, velvet-draped lounge in Brickell by Bad Bunny and David Grutman, known for its elite crowd, DJ sets, and luxury Japanese vibes. Girls often get in on guestlist; guys book tables for entry. Dress code is upscale and stylish.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 <div class="club-card">
@@ -2244,7 +2433,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Thu – Sat</div>
 <h3 class="club-name">Mary Lou's</h3>
 <p class="club-desc">Mary Lou's is an intimate, high-energy lounge in Miami known for its chic crowd and late-night atmosphere. The space blends sultry lighting, curated music, and crafted cocktails to create a stylish, members-only feel without the formality. It's a go-to spot for those looking to transition from dinner into a more exclusive, social nightlife experience.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 <div class="club-card">
@@ -2253,7 +2442,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Fri – Sun</div>
 <h3 class="club-name">Daer</h3>
 <p class="club-desc">An upscale, Vegas-style nightclub at the Seminole Hard Rock Guitar Hotel, with massive LED walls, top DJs, and a luxury poolside dayclub vibe. Girls can often get on the guestlist; guys must book a table or buy tickets. Dress code is trendy and upscale.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 <div class="club-card">
@@ -2262,7 +2451,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Mon, Fri – Sat</div>
 <h3 class="club-name">Vendôme</h3>
 <p class="club-desc">A stylish South Beach club with Parisian-inspired decor, hip-hop and house music, and a fashionable international crowd. Girls often get in on guestlist with free drinks early; guys always need a table. Dress code is upscale and enforced.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 <div class="club-card">
@@ -2271,7 +2460,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Tue, Thu, Sun</div>
 <h3 class="club-name">Mona Club</h3>
 <p class="club-desc">A luxe South Beach venue featuring da Vinci-inspired decor, live rapper sets, and a high-energy hip-hop and Latin music mix. Girls often get on guestlist; guys enter through table reservations. Dress code is upscale and trendy.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 <div class="club-card">
@@ -2280,7 +2469,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Wed, Fri – Sat</div>
 <h3 class="club-name">Bacara</h3>
 <p class="club-desc">An upscale, high-energy Miami Beach nightclub known for late nights, top DJs, and a sleek, sexy crowd. Girls can get in through guestlist; guys need to book a table — no guestlist or tickets available for men. Dress code is stylish and enforced.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 <div class="club-card">
@@ -2289,7 +2478,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Tue, Fri – Sat</div>
 <h3 class="club-name">Mr. Jones</h3>
 <p class="club-desc">A sleek South Beach hotspot spinning all hip-hop, backed by VIP energy, dancers, and intimate luxury vibes. Girls can always get on the guestlist; guys need to reserve a table or bottle service nightly. Dress code is upscale and refined.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 </div>
@@ -2303,7 +2492,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Fri – Sat</div>
 <h3 class="club-name">Palm Tree Club</h3>
 <p class="club-desc">A tropical waterfront venue by Kygo's Palm Tree Crew, blending sunset live-music sets and late-night dance parties with big-name DJs. Tickets and tables are required for DJ events for both guys and girls. Typically starts at 4:00 PM on Fridays and Saturdays.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 <div class="club-card">
@@ -2312,7 +2501,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Thu – Sun</div>
 <h3 class="club-name">Casa Neos</h3>
 <p class="club-desc">Casa Neos is a waterfront hotspot in Miami that blends Mediterranean-inspired dining with a high-end nightlife atmosphere. By day it offers refined, scenic dining, while at night it transforms into a vibrant social scene with music, cocktails, and an upscale crowd. It's a go-to destination for a luxury, experience-driven night out.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 
@@ -2323,7 +2512,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">Fri – Sun</div>
 <h3 class="club-name">Daer</h3>
 <p class="club-desc">An upscale, Vegas-style nightclub at the Seminole Hard Rock Guitar Hotel, with massive LED walls, top DJs, and a luxury poolside dayclub vibe. Girls can often get on the guestlist; guys must book a table or buy tickets. Dress code is trendy and upscale.</p>
-<a class="club-book" href="#contact">Reserve Table</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Reserve Table</a>
 </div>
 </div>
 </div>
@@ -2337,7 +2526,7 @@ img { max-width: 100%; height: auto; }
 <div class="club-days">May · Annual</div>
 <h3 class="club-name">F1 Miami Grand Prix</h3>
 <p class="club-desc">Miami Grand Prix brings Formula 1 energy to Miami with world-class racing, luxury hospitality, celebrity parties, and nonstop nightlife. Set around the Hard Rock campus, it blends elite motorsport with the city's signature glamour, making race weekend as much a social spectacle as a sporting event. During F1 Miami, the entire city turns into a high-octane playground of speed, status, and exclusive experiences.</p>
-<a class="club-book" href="#contact">Inquire Access</a>
+<a class="club-book" href="#reserve" onclick="event.preventDefault();showReserve(this);">Inquire Access</a>
 </div>
 </div>
   </div>
@@ -2392,15 +2581,155 @@ img { max-width: 100%; height: auto; }
 <div class="cta-band" id="contact">
 <div class="cta-copy"><h2>Ready to Experience<br/><em>the Extraordinary?</em></h2><p>Our concierge team is standing by. Leave your email and we'll reach out within the hour to begin crafting your bespoke experience.</p></div>
 <div class="cta-actions">
-<div class="cta-form"><input class="cta-input" id="ctaEmail" placeholder="Your email address" type="email"/><button class="cta-submit" onclick="document.location.href='mailto:osohospitality@gmail.com?subject=Inquiry from '+encodeURIComponent(document.getElementById('ctaEmail').value || 'website')">Get in Touch</button></div>
+<div class="cta-form"><input class="cta-input" id="ctaEmail" placeholder="Your email address" type="email"/><button class="cta-submit" onclick="event.preventDefault();showReserve();">Get in Touch</button></div>
 <span class="cta-note">Email us: <a href="mailto:osohospitality@gmail.com" style="color:inherit;text-decoration:underline;">osohospitality@gmail.com</a> · Available 24/7</span>
 </div>
 </div>
 <!-- FOOTER -->
+
+<!-- RESERVE LANDING PAGE -->
+<section class="section reserve-bg" id="reserve">
+  <a href="#" class="back-home-btn" onclick="event.preventDefault();showHome();"><span class="back-arrow">←</span> Back to Home</a>
+  
+  <div class="reserve-hero reveal">
+    <div class="section-tag">Begin Your Journey</div>
+    <h2 class="section-heading">Reserve Your<br/><em>Extraordinary Experience</em></h2>
+    <p class="section-body">Tell us about your vision. A dedicated concierge will respond within hours, day or night, with a curated experience tailored to your every desire.</p>
+  </div>
+
+  <div class="reserve-container reveal">
+    <div class="reserve-form-wrapper">
+      <form class="reserve-form" id="reserveForm" onsubmit="submitReservation(event)">
+        
+        <div class="form-section">
+          <div class="form-section-label">Experience</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Service</label>
+              <select class="form-select" id="r_service" required>
+                <option value="">Select an experience</option>
+                <option>Luxury Yacht Charter</option>
+                <option>Exotic Car Rental</option>
+                <option>Private Villa / Penthouse</option>
+                <option>Nightlife &amp; VIP Tables</option>
+                <option>Exclusive Events</option>
+                <option>Full Concierge Package</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Destination</label>
+              <select class="form-select" id="r_destination" required>
+                <option value="">Select destination</option>
+                <option>Miami</option>
+                <option>Monaco</option>
+                <option>Cannes</option>
+                <option>St. Tropez</option>
+                <option>Saint-Barths</option>
+                <option>Ibiza</option>
+                <option>Mykonos</option>
+                <option>Maldives</option>
+                <option>Dubai</option>
+                <option>Other / Custom</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-label">Details</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Arrival Date</label>
+              <input type="date" class="form-input" id="r_arrival" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Departure Date</label>
+              <input type="date" class="form-input" id="r_departure"/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Number of Guests</label>
+              <input type="number" class="form-input" id="r_guests" min="1" max="50" placeholder="e.g. 4" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Budget Range</label>
+              <select class="form-select" id="r_budget">
+                <option value="">Select budget</option>
+                <option>$5,000 – $15,000</option>
+                <option>$15,000 – $50,000</option>
+                <option>$50,000 – $100,000</option>
+                <option>$100,000 – $250,000</option>
+                <option>$250,000+</option>
+                <option>Prefer not to specify</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-label">Contact</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" id="r_name" placeholder="Your name" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" id="r_email" placeholder="you@example.com" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group full-width">
+              <label class="form-label">Phone (Optional)</label>
+              <input type="tel" class="form-input" id="r_phone" placeholder="+1 (305) 000-0000"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-label">Vision</div>
+          <div class="form-row">
+            <div class="form-group full-width">
+              <label class="form-label">Describe Your Ideal Experience</label>
+              <textarea class="form-textarea" id="r_message" rows="5" placeholder="Tell us about the occasion, preferences, special requests, or anything else that will help us craft your perfect experience..." required></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="reserve-submit">
+            <span>Submit Reservation Request</span>
+            <span class="submit-arrow">→</span>
+          </button>
+          <p class="reserve-note">Or reach our concierge directly at <a href="mailto:osohospitality@gmail.com">osohospitality@gmail.com</a> · Available 24/7</p>
+        </div>
+      </form>
+    </div>
+
+    <aside class="reserve-aside">
+      <div class="aside-card">
+        <h3 class="aside-title">White-Glove Service</h3>
+        <p class="aside-text">From the moment you submit, you're paired with a dedicated concierge who handles every detail — discreetly, seamlessly, and with absolute precision.</p>
+      </div>
+      <div class="aside-stats">
+        <div class="aside-stat"><div class="aside-stat-num">24/7</div><div class="aside-stat-label">Concierge Access</div></div>
+        <div class="aside-stat"><div class="aside-stat-num">&lt; 2 hrs</div><div class="aside-stat-label">Response Time</div></div>
+        <div class="aside-stat"><div class="aside-stat-num">9</div><div class="aside-stat-label">Global Destinations</div></div>
+      </div>
+      <div class="aside-card aside-quote">
+        <p class="aside-quote-text">"Every experience curated with intention. Every detail considered. Every guest treated as the most important one."</p>
+        <div class="aside-quote-author">— OSO Hospitality</div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+
 <footer>
 <div class="footer-top">
 <div>
-<div class="footer-brand"><img alt="OSO HOSPITALITY" id="footerLogo" src="data:image/jpeg;base64,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" style="height:48px;width:auto;display:block;filter:brightness(0) invert(1);"/></div>
+<div class="footer-brand"><img alt="OSO HOSPITALITY" id="footerLogo" src="data:image/jpeg;base64,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" style="height:90px;width:auto;display:block;"/></div>
 <p class="footer-tagline">"The world's finest experiences, delivered without compromise."</p>
 <div class="footer-contact-info">
   <a href="mailto:osohospitality@gmail.com" class="footer-contact-link">osohospitality@gmail.com</a>
@@ -2602,6 +2931,133 @@ document.querySelectorAll('.nav-drop-item[href^="#"]').forEach(link => {
     });
   }
 });
+
+
+// Show Reserve landing page
+function showReserve(sourceEl) {
+  // Hide all home-only sections
+  document.querySelectorAll('.home-only').forEach(el => el.style.display = 'none');
+  // Hide all other hideable sections
+  ['yachts-miami', 'exotic-cars', 'nightclubs', 'miami-villas', 'cannes-entertainment', 'monaco-entertainment', 'reserve'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('active-section');
+  });
+  // Show reserve section
+  const target = document.getElementById('reserve');
+  if (target) {
+    target.classList.add('active-section');
+    setTimeout(() => target.scrollIntoView({behavior: 'smooth', block: 'start'}), 50);
+  }
+  // Close mobile menu if open
+  document.querySelector('.nav-links')?.classList.remove('mobile-open');
+  
+  // Auto-fill service if user clicked from a specific section
+  if (sourceEl) {
+    let service = '';
+    if (sourceEl.classList.contains('car-inquire')) service = 'Exotic Car Rental';
+    else if (sourceEl.classList.contains('club-book')) service = 'Nightlife & VIP Tables';
+    else if (sourceEl.classList.contains('ph-cta')) service = 'Private Villa / Penthouse';
+    else if (sourceEl.classList.contains('yacht-cta')) service = 'Luxury Yacht Charter';
+    
+    const serviceSelect = document.getElementById('r_service');
+    if (service && serviceSelect) {
+      // Set to matching option
+      Array.from(serviceSelect.options).forEach(opt => {
+        if (opt.value === service || opt.textContent === service) serviceSelect.value = opt.value;
+      });
+    }
+    
+    // Try to auto-detect destination from card context (e.g. Miami, Monaco)
+    const card = sourceEl.closest('section');
+    if (card && card.id) {
+      const destSelect = document.getElementById('r_destination');
+      let dest = '';
+      if (card.id.includes('miami')) dest = 'Miami';
+      else if (card.id.includes('monaco')) dest = 'Monaco';
+      else if (card.id.includes('cannes')) dest = 'Cannes';
+      if (dest && destSelect) {
+        Array.from(destSelect.options).forEach(opt => {
+          if (opt.textContent === dest) destSelect.value = opt.value;
+        });
+      }
+    }
+  }
+}
+
+// Handle reservation form submit -> opens email with all details prefilled
+function submitReservation(e) {
+  e.preventDefault();
+  const get = id => (document.getElementById(id) || {}).value || '';
+  const service = get('r_service');
+  const destination = get('r_destination');
+  const arrival = get('r_arrival');
+  const departure = get('r_departure');
+  const guests = get('r_guests');
+  const budget = get('r_budget');
+  const name = get('r_name');
+  const email = get('r_email');
+  const phone = get('r_phone');
+  const message = get('r_message');
+  
+  const subject = `Reservation Request — ${service} in ${destination}`;
+  const body = `Hello OSO Hospitality concierge team,
+
+I would like to inquire about the following experience:
+
+EXPERIENCE DETAILS
+Service: ${service}
+Destination: ${destination}
+Arrival: ${arrival}
+Departure: ${departure || '(Open)'}
+Guests: ${guests}
+Budget Range: ${budget || '(Not specified)'}
+
+CONTACT
+Name: ${name}
+Email: ${email}
+Phone: ${phone || '(Not provided)'}
+
+VISION
+${message}
+
+Looking forward to your response.
+
+Best regards,
+${name}`;
+  
+  const mailto = `mailto:osohospitality@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  // Show visual feedback
+  const btn = document.querySelector('.reserve-submit');
+  if (btn) {
+    const original = btn.innerHTML;
+    btn.innerHTML = '<span>Opening your email...</span><span class="submit-arrow">✓</span>';
+    btn.style.opacity = '0.85';
+    setTimeout(() => { btn.innerHTML = original; btn.style.opacity = ''; }, 3000);
+  }
+  window.location.href = mailto;
+}
+
+// Also wire any other Reserve Now buttons in the page
+document.querySelectorAll('a[href="#reserve"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    showReserve();
+  });
+});
+
+
+// Set sensible default dates for reservation form (today, tomorrow)
+function initReserveDefaults() {
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const fmt = d => d.toISOString().split('T')[0];
+  const arrival = document.getElementById('r_arrival');
+  const departure = document.getElementById('r_departure');
+  if (arrival && !arrival.value) arrival.min = fmt(today);
+  if (departure && !departure.value) departure.min = fmt(tomorrow);
+}
+document.addEventListener('DOMContentLoaded', initReserveDefaults);
 
 </script>
 </body>
